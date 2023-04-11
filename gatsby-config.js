@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
 
 module.exports = {
@@ -22,16 +22,16 @@ module.exports = {
     {
       resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: "process.env.API_TOKEN_UAT",
-        customTypesApiToken: "process.env.NAME_UAT",
+        repositoryName: process.env.NAME,
+        customTypesApiToken: process.env.API_TOKEN,
         linkResolver: require('./src/linkResolver').linkResolver,
       },
     },
     {
       resolve: 'gatsby-plugin-prismic-previews',
       options: {
-        repositoryName: "process.env.API_TOKEN_UAT",
-        accessToken: "process.env.NAME_UAT",
+        repositoryName: process.env.NAME,
+        accessToken: process.env.API_TOKEN,
         linkResolver: require('./src/linkResolver'),
       },
     },
