@@ -1,0 +1,78 @@
+@import "./style/designSystem/_fonts";
+@import "./style/designSystem/_variables";
+@import "./style/designSystem/_colors";
+@import "./style/designSystem/_grids";
+@import "./style/designSystem/border";
+@import "./style/designSystem/_text";
+@import "./style/designSystem/_buttons";
+@import "./style/designSystem/_utilities";
+@import "./style/designSystem/_form";
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+
+  .bodyWrapper {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    h1 {
+      font-size: 5.5rem;
+    }
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    @media screen and ($media-xs) {
+      h1 { font-size: 2.8rem; }
+      h3 {
+        font-size: 2rem;
+        font-weight: 400;
+      }
+    }
+    
+    @media screen and ($media-sm) {
+      h1 { font-size: 3.2rem; }
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 400;
+      }
+    }
+  }
+  
+  @media screen and ($media-xs) {
+    .bodyWrapper {
+      padding-bottom: 10rem;
+    }
+  }
+
+  @media screen and ($media-sm) {
+    .bodyWrapper {
+      padding-bottom: 10rem;
+    }
+  }
+}
+
+@import "./style/components/welcomeMessage";
+@import "./style/components/menu";
+@import "./style/components/according";
+@import "./style/components/box";
+@import "./style/components/cards";
+@import "./style/components/hero";
+@import "./style/components/image";
+@import "./style/components/dashboard";
+@import "./style/components/carousel";
+@import "./style/components/infoBox";
+@import "./style/components/contactForm";
+@import "./style/components/openingHours";
+@import "./style/components/richText";
+@import "./style/components/footer";

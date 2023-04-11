@@ -1,0 +1,34 @@
+#trigger:
+#- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.9.0'
+  displayName: 'Install Node.js'
+- script: |
+    npm install
+  displayName: 'npm install'
+
+- script: |
+    npm run build
+  displayName: 'npm build'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'FilePath'
+    TargetPath: '$(Build.ArtifactStagingDirectory)'
+- task: AmazonWebServices.aws-vsts-tools.S3Upload.S3Upload@1
+  displayName: 'S3 Upload: content.skypoint.com.au'
+  inputs:
+    awsCredentials: 'AWS-S3-Connection'
+    regionName: 'ap-southeast-2'
+    bucketName: content.skypoint.com.au
+    sourceFolder: '$(Build.ArtifactStagingDirectory)'
+    globExpressions: '/drop/**/*'
+    targetFolder: sky22
+    filesAcl: 'public-read'
