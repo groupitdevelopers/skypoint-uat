@@ -65,14 +65,14 @@ const Header = () => {
     arr.forEach(obj => {
       let fullLink = '/'
 
-      if (obj.link.url) {
-        fullLink = obj.link.url
+      if (obj.link.uid) {
+        fullLink = obj.anchor_id
+        ? "/" + obj.link.uid + "/#" + obj.anchor_id
+        : "/" + obj.link.uid
       }
       else {
-        if (obj.link.uid) {
-          fullLink = obj.anchor_id
-          ? "/" + obj.link.uid + "/#" + obj.anchor_id
-          : "/" + obj.link.uid
+        if (obj.link.url) {
+          fullLink = obj.link.url
         }
       }
 
@@ -96,6 +96,8 @@ const Header = () => {
         })
       }
     })
+
+    console.log(mList)
 
     return mList
   }
