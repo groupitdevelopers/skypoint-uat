@@ -5,13 +5,13 @@ import {
 } from 'gatsby-plugin-prismic-previews'
 
 import { linkResolver } from './src/linkResolver'
-import PageTemplate from './src/pages/index'
+import PageTemplate from './src/components/layout'
 
 export const wrapRootElement = ({ element }) => (
   <PrismicPreviewProvider
     repositoryConfigs={[
       {
-        repositoryName: "skypoint-uat",
+        repositoryName: process.env.NAME,
         linkResolver,
         componentResolver: componentResolverFromMap({
           page: PageTemplate,
