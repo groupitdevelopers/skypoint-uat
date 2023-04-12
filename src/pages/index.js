@@ -258,22 +258,22 @@ const IndexPage = props => {
     setGlobalState("showSubscribe", true)
   }
 
-  useEffect(
-    () => {
-      if (typeof window !== 'undefined') {
-        const delaySubscribe = sessionStorage.getItem("delaySubscribe")
-        const delay = localStorage.getItem("delaySubscribeTime")
+  // useEffect(
+  //   () => {
+  //     if (typeof window !== 'undefined') {
+  //       const delaySubscribe = sessionStorage.getItem("delaySubscribe")
+  //       const delay = localStorage.getItem("delaySubscribeTime")
 
-        if(delaySubscribe === null) {
-          let timer = setTimeout(() => showSubscribeForm(), (delay*1000))
-          sessionStorage.setItem("delaySubscribe", true)
-          return () => {
-            clearTimeout(timer);
-          }
-        }
-      }
-    },[]
-  )
+  //       if(delaySubscribe === null) {
+  //         let timer = setTimeout(() => showSubscribeForm(), (delay*1000))
+  //         sessionStorage.setItem("delaySubscribe", true)
+  //         return () => {
+  //           clearTimeout(timer);
+  //         }
+  //       }
+  //     }
+  //   },[]
+  // )
  
   return (
     <React.StrictMode>
