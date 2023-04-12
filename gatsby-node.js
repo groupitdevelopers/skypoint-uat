@@ -34,7 +34,7 @@ exports.createPages = async (gatsbyContext) => {
   {
     const queryResult = await graphql(`
       query {
-        allPrismicSubpage {
+        allPrismicPage {
           nodes {
             id
             url
@@ -43,7 +43,7 @@ exports.createPages = async (gatsbyContext) => {
       }
     `);
 
-    for (const page of queryResult.data.allPrismicSubpage.nodes ?? []) {
+    for (const page of queryResult.data.allPrismicPage.nodes ?? []) {
       createPage({
         path: page.url,
         component: path.resolve(__dirname, "./src/templates/using-dsg.js"),
