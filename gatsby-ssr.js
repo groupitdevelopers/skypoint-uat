@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 import * as React from 'react'
 import {
   PrismicPreviewProvider,

@@ -1,4 +1,8 @@
 // import * as React from 'react'
+require("dotenv").config({
+  path: `.env`,
+})
+
 import { withPrismicPreviewResolver } from 'gatsby-plugin-prismic-previews'
 
 // Update the path to your Link Resolver
