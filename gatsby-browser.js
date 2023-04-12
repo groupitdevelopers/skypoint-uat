@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env`,
-})
-
 import * as React from 'react'
 import {
   PrismicPreviewProvider,
@@ -15,7 +11,7 @@ export const wrapRootElement = ({ element }) => (
   <PrismicPreviewProvider
     repositoryConfigs={[
       {
-        repositoryName: process.env.NAME,
+        repositoryName: skypoint-uat,
         linkResolver,
         componentResolver: componentResolverFromMap({
           page: PageTemplate,
