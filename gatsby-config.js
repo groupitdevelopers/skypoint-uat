@@ -47,6 +47,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-meta-redirect`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
