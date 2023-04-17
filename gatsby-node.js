@@ -33,6 +33,7 @@
 
 
 const path = require("path");
+const redirects = require('./redirects.json');
 
 exports.createPages = async ({graphql, actions}) => {
   const { createPage } = actions
