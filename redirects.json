@@ -1,0 +1,126 @@
+[
+    {
+      "from": "/plan-your-visit/",
+      "to": "/visit/"
+    },
+    {
+      "from": "/plan-your-visit/types-of-tickets/",
+      "to": "/tickets/"
+    },
+    {
+      "from": "/plan-your-visit/skypoint-breakfast/",
+      "to": "/breakfast/"
+    },
+    {
+      "from": "/plan-your-visit/skypoint-bistro-and-bar/",
+      "to": "/dine/"
+    },
+    {
+      "from": "/plan-your-visit/skypoint-rewards/",
+      "to": "/tickets/"
+    },
+    {
+      "from": "/plan-your-visit/getting-here-parking/",
+      "to": "/visit/#getting_here"
+    },
+    {
+      "from": "/plan-your-visit/opening-hours/",
+      "to": "/visit/#opening_hours"
+    },
+     {
+      "from": "/plan-your-visit/frequently-asked-questions/",
+      "to": "/visit/#faq"
+    },
+    {
+      "from": "/plan-your-visit/facts-and-history/",
+      "to": "/visit/"
+    },
+    {
+      "from": "/plan-your-visit/education-programs/",
+      "to": "/tickets/"
+    },
+    {
+      "from": "/plan-your-visit/group-visits/",
+      "to": "/tickets/#groups"
+    },
+    {
+      "from": "/plan-your-visit/gift-certificates/",
+      "to": "/tickets/#gifts"
+    },
+    {
+      "from": "/skypoint-climb/",
+      "to": "/climb/"
+    },
+    {
+      "from": "/skypoint-climb/experience-information/",
+      "to": "/climb/#experience-info"
+    },
+    {
+      "from": "/skypoint-climb/climb-preparation/",
+      "to": "/climb/#climb-preparation"
+    },
+    {
+      "from": "/skypoint-climb/frequently-asked-questions/",
+      "to": "/climb/#faqs"
+    },
+    {
+      "from": "/what-s-on/",
+      "to": "/whatson/"
+    },
+    {
+      "from": "/what-s-on/skypoint-sounds/",
+      "to": "/whatson/skypoint-sounds/"
+    },
+    {
+      "from": "/what-s-on/stair-challenge/",
+      "to": "/whatson/stair-challenge/"
+    },
+    {
+      "from": "/what-s-on/magical-circus/",
+      "to": "/whatson/magical-circus/"
+    },
+    {
+      "from": "/events-at-skypoint/",
+      "to": "/functions/"
+    },
+    {
+      "from": "/events-at-skypoint/level-2-events/",
+      "to": "/functions/"
+    },
+    {
+      "from": "/events-at-skypoint/level-77-events/",
+      "to": "/functions/"
+    },
+    {
+      "from": "/events-at-skypoint/level-78-events/",
+      "to": "/functions/"
+    },
+    {
+      "from": "/covid-19-update/",
+      "to": "/"
+    },
+    {
+      "from": "/skypoint-info/trade-media/",
+      "to": "/trade-and-media/"
+    },
+    {
+      "from": "/copyright-disclaimer/",
+      "to": "/copyright-and-disclaimer/"
+    },
+    {
+      "from": "/promotions/coastal-local-15-entry/",
+      "to": "/tickets/"
+    },
+    {
+      "from": "/skypoint-info/employment/indigenous-employment/",
+      "to": "/employment/"
+    },
+    {
+      "from": "/skypoint-info/employment/vision-values/",
+      "to": "/employment/"
+    },
+    {
+      "from": "/404-not-found",
+      "to": "/404/"
+    }
+  ]

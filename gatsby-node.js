@@ -35,13 +35,14 @@
 const path = require("path");
 
 exports.createPages = async ({graphql, actions}) => {
-  // const { actions, graphql } = gatsbyContext;
   const { createPage } = actions
   const { createRedirect } = actions
 
-  createRedirect({
-    fromPath: `/what-s-on/skypoint-sounds/`,
-    toPath: `/skypoint-sounds/`,
+  redirects.forEach(redirect => {
+    createRedirect({
+      fromPath: redirect.from,
+      toPath: redirect.to
+    })
   })
 
   {
