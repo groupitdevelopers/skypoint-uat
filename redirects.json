@@ -69,15 +69,15 @@
     },
     {
       "from": "/what-s-on/skypoint-sounds/",
-      "to": "/whatson/skypoint-sounds/"
+      "to": "/skypoint-sounds/"
     },
     {
       "from": "/what-s-on/stair-challenge/",
-      "to": "/whatson/stair-challenge/"
+      "to": "/stair-challenge/"
     },
     {
       "from": "/what-s-on/magical-circus/",
-      "to": "/whatson/magical-circus/"
+      "to": "/magical-circus/"
     },
     {
       "from": "/events-at-skypoint/",
