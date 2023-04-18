@@ -1,50 +1,8 @@
-// const path = require("path")
-
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   const { createRedirect } = actions
-//   const queryResult = await graphql(`
-//     query {
-//       allPrismicSubpage {
-//         nodes {
-//           id
-//           uid
-//           url
-//         }
-//       }
-//     }
-//   `)
-
-
-//   createRedirect({
-//     fromPath: `http://localhost:8000/what-s-on/skypoint-sounds/`,
-//     toPath: `/skypoint-sounds/`,
-//   });
-
-//   const productTemplate = path.resolve(`src/templates/using-dsg.js`)
-//   for (const page of queryResult.data.allPrismicSubpage.nodes ?? []) {
-//       createPage({
-//         path: page.url,
-//         component: productTemplate,
-//         context: { id: page.id },
-//       });
-//     }
-// }
-
-
 const path = require("path");
-const redirects = require('./redirects.json');
 
 exports.createPages = async ({graphql, actions}) => {
   const { createPage } = actions
   const { createRedirect } = actions
-
-  redirects.forEach(redirect => {
-    createRedirect({
-      fromPath: redirect.from,
-      toPath: redirect.to
-    })
-  })
 
   {
     const queryResult = await graphql(`
@@ -56,7 +14,30 @@ exports.createPages = async ({graphql, actions}) => {
           }
         }
       }
-    `);
+    `)
+
+    const redirections = await graphql(`
+      query {
+        prismicRedierctions {
+          data {
+            redirections {
+              from
+              to
+            }
+          }
+        }
+      }
+    `)
+
+    const redirects = redirections.data.prismicRedierctions.data.redirections
+
+    redirects.forEach(redirect => {
+      console.log("FROM: ", redirect.from)
+      createRedirect({
+        fromPath: redirect.from,
+        toPath: redirect.to
+      })
+    })
 
     for (const page of queryResult.data.allPrismicSubpage.nodes ?? []) {
       createPage({
