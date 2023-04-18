@@ -122,5 +122,9 @@
     {
       "from": "/404-not-found",
       "to": "/404/"
-    }
+    },
+    {
+        "from": "/skypoint-info/q1-resort-spa",
+        "to": "/q1-resort-spa/"
+      }
   ]

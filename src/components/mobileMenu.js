@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const MobileMenuList = ({ menu }) => {
-  console.log("MOBMENU: ", menu)
 
   const [isActive, setIsActive] = useState(false)
   return (
