@@ -18,7 +18,7 @@ exports.createPages = async ({graphql, actions}) => {
 
     const redirections = await graphql(`
       query {
-        prismicRedierctions {
+        prismicRedirections {
           data {
             redirections {
               from
@@ -29,10 +29,9 @@ exports.createPages = async ({graphql, actions}) => {
       }
     `)
 
-    const redirects = redirections.data.prismicRedierctions.data.redirections
+    const redirects = redirections.data.prismicRedirections.data.redirections
 
     redirects.forEach(redirect => {
-      console.log("FROM: ", redirect.from)
       createRedirect({
         fromPath: redirect.from,
         toPath: redirect.to
