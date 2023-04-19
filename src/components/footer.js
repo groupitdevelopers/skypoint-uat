@@ -12,9 +12,6 @@ export const Footer = props => {
 
   function links(arr) {
     let response = []
-    arr.map((lnk) => {
-      console.log("UID: ", lnk.link.uid)  
-    })
 
     arr.map((lnk, index) =>
       response.push(
