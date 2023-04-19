@@ -1,5 +1,5 @@
 import  React, {useEffect} from "react"
-import { setGlobalState } from "../components/store"
+// import { setGlobalState } from "../components/store"
 import { graphql } from "gatsby"
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { linkResolver } from "../linkResolver"
@@ -254,9 +254,9 @@ const IndexPage = props => {
     window.scrollTo(0,0)
   }, [])
 
-  function showSubscribeForm() {
-    setGlobalState("showSubscribe", true)
-  }
+  // function showSubscribeForm() {
+  //   setGlobalState("showSubscribe", true)
+  // }
 
   // useEffect(
   //   () => {

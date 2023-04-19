@@ -82,9 +82,9 @@ export const Contactform = props => {
       }
     }
 
-    let tokenLink = "http://prk-prod-ms-public-254646448.ap-southeast-2.elb.amazonaws.com/parksapi/gettoken"
+    let tokenLink = "https://spforms.ardentleisure.com/parksapi/gettoken"
     let token = ""
-    let link = `http://prk-prod-ms-public-254646448.ap-southeast-2.elb.amazonaws.com/parksapi/Email?emailAddress=${emailAddress}&subject=${subject}&content=${content}`
+    let link = `https://spforms.ardentleisure.com/parksapi/Email?emailAddress=${emailAddress}&subject=${subject}&content=${content}`
 
     await fetch(tokenLink, {
       method: "POST",
