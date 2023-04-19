@@ -12,12 +12,17 @@ const Header = () => {
   const [scroll, setScroll] = useState(false)
   const [isOpened, setIsOpened] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const openInNewTab = url => {
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 40)
     })
   }, [])
+
+  function handleClick() {}
 
   function headToggle() {
     setIsOpened(wasOpened => !wasOpened)
@@ -175,6 +180,32 @@ const Header = () => {
                    <MobileMenuList key={'menulist-'+i} menu={m} index={i} />
                   ))}
                 </ul>
+                <div className="social">
+                <button
+                    onClick={() =>
+                      openInNewTab('https://www.instagram.com/skypoint_au/')
+                    }
+                    className='col iconSocial iconIns'
+                    onKeyDown={handleClick()}
+                    aria-label='btn'
+                  />
+                  <button
+                    onClick={() =>
+                      openInNewTab('https://www.facebook.com/skypoint')
+                    }
+                    className='col iconSocial iconFac'
+                    onKeyDown={handleClick()}
+                    aria-label='btn'
+                  />
+                  <button
+                    onClick={() =>
+                      openInNewTab('https://www.youtube.com/@SkyPointAU')
+                    }
+                    className='col iconSocial iconYou'
+                    onKeyDown={handleClick()}
+                    aria-label='btn'
+                  />
+                </div>
               </div>
             )}
             <a 

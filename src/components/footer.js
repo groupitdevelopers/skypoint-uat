@@ -12,8 +12,7 @@ export const Footer = props => {
 
   function links(arr) {
     let response = []
-    
-    
+
     arr.map((lnk, index) =>
       response.push(
         <div className='footerLink' key={index}>
