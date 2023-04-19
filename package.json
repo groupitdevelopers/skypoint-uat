@@ -27,7 +27,7 @@
     "gatsby-transformer-sharp": "^5.8.0",
     "gbimage-bridge": "^0.2.2",
     "is-odd": "^3.0.1",
-    "npm": "^9.6.3",
+    "npm": "^9.6.4",
     "parse-url": "^8.1.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
