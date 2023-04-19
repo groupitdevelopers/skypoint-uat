@@ -288,7 +288,8 @@ const IndexPage = props => {
   )
 }
 
-let link = "https://static.cdn.prismic.io/prismic.js?new=true&repo="+process.env.NAME
+// let link = "https://static.cdn.prismic.io/prismic.js?new=true&repo="+process.env.NAME
+let link = "https://static.cdn.prismic.io/prismic.js?new=true&repo=skypoint"
 
 export const Head = (props) => (
   <>
