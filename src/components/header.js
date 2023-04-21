@@ -102,8 +102,6 @@ const Header = () => {
       }
     })
 
-    console.log(mList)
-
     return mList
   }
 

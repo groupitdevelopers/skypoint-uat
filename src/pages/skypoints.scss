@@ -19,6 +19,14 @@ body {
   font-size: 10px;
   font-family: "Poppins", sans-serif;
 
+  .fourzerofour{
+    background: url("../images/404.jpg") no-repeat center center fixed;
+    position: absolute;
+    padding-top: 5rem;
+    width: 100%;
+    height: 100%;
+  }
+
   .bodyWrapper {
     width: 100%;
     position: absolute;
