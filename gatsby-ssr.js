@@ -12,7 +12,7 @@ export const wrapRootElement = ({ element }) => (
   <PrismicPreviewProvider
     repositoryConfigs={[
       {
-        repositoryName: "skypoint",
+        repositoryName: process.env.GATSBY_NAME,
         linkResolver,
         componentResolver: componentResolverFromMap({
           page: PageTemplate,

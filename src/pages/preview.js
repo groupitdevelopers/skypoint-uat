@@ -9,7 +9,7 @@ const PreviewPage = ({ data }) => {
 
 export default withPrismicPreviewResolver(PreviewPage, [
   {
-    repositoryName: "skypoint",
+    repositoryName: process.env.GATSBY_NAME,
     linkResolver,
   },
 ])

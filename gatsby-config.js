@@ -22,16 +22,16 @@ module.exports = {
     {
       resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: process.env.NAME,
-        customTypesApiToken: process.env.API_TOKEN,
+        repositoryName: process.env.GATSBY_NAME,
+        customTypesApiToken: process.env.GATSBY_API_TOKEN,
         linkResolver: require('./src/linkResolver').linkResolver,
       },
     },
     {
       resolve: 'gatsby-plugin-prismic-previews',
       options: {
-        repositoryName: process.env.NAME,
-        accessToken: process.env.API_TOKEN,
+        repositoryName: process.env.GATSBY_NAME,
+        accessToken: process.env.GATSBY_API_TOKEN,
         linkResolver: require('./src/linkResolver'),
       },
     },

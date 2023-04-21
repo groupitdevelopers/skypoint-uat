@@ -287,9 +287,7 @@ const IndexPage = props => {
     </React.StrictMode>
   )
 }
-
-// let link = "https://static.cdn.prismic.io/prismic.js?new=true&repo="+process.env.NAME
-let link = "https://static.cdn.prismic.io/prismic.js?new=true&repo=skypoint"
+let link = "https://static.cdn.prismic.io/prismic.js?new=true&repo="+process.env.GATSBY_NAME
 
 export const Head = (props) => (
   <>
@@ -337,8 +335,7 @@ export const Head = (props) => (
 
 export default  withPrismicPreview(IndexPage, [
   {
-    // repositoryName: process.env.NAME,
-    repositoryName: "skypoint",
+    repositoryName: process.env.GATSBY_NAME,
     linkResolver,
   },
 ])
