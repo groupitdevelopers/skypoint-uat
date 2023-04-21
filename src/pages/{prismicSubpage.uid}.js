@@ -247,7 +247,7 @@ export const query = graphql`
   }
 `
 
-const IndexPage = props => {
+const SubPage = props => {
 
   useEffect(() => {
     window.scrollTo(0,0)
@@ -309,9 +309,11 @@ export const Head = (props) => (
   </>
 )
 
-export default withPrismicPreview(IndexPage, [
-  {
-    repositoryName: process.env.GATSBY_NAME,
-    linkResolver,
-  },
-])
+export default SubPage
+
+// export default withPrismicPreview(IndexPage, [
+//   {
+//     repositoryName: process.env.GATSBY_NAME,
+//     linkResolver,
+//   },
+// ])
