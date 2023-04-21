@@ -333,9 +333,11 @@ export const Head = (props) => (
   </>
 )
 
-export default  withPrismicPreview(IndexPage, [
-  {
-    repositoryName: process.env.GATSBY_NAME,
-    linkResolver,
-  },
-])
+export default IndexPage
+
+// export default  withPrismicPreview(IndexPage, [
+//   {
+//     repositoryName: process.env.GATSBY_NAME,
+//     linkResolver,
+//   },
+// ])
