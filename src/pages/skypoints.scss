@@ -20,7 +20,8 @@ body {
   font-family: "Poppins", sans-serif;
 
   .fourzerofour{
-    background: url("../images/404.jpg") no-repeat center center fixed;
+    background: url("../images/404.jpg") no-repeat;
+    background-size: 100% 100%;
     position: absolute;
     padding-top: 5rem;
     width: 100%;
