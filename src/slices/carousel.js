@@ -55,7 +55,10 @@ export const Carousel = props => {
             </div>
             <div className="row">
               <div className="col p-0 afterPay">
-                {carousel.after_pay_text} <div className="logo"></div>
+                {carousel.after_pay_text} 
+                {carousel.afterpay_logo &&
+                  <div className="logo"></div>
+                }
               </div>
             </div>
             <div className="row">

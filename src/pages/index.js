@@ -166,6 +166,7 @@ export const query = graphql`
             }
             items {
               after_pay_text
+              afterpay_logo
               button_link {
                 url
                 uid
