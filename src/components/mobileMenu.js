@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const MobileMenuList = ({ menu, onClick }) => {
 
@@ -20,17 +19,7 @@ const MobileMenuList = ({ menu, onClick }) => {
         <ul >
           {menu.subMenu.map((sm, i) => (
             <li key={i}>
-              {menu.link[i] &&
-                <a href={menu.link[i]} onClick={onClick}>{sm}</a>
-                // <AnchorLink
-                //   to={menu.link[i]}
-                //   title={sm}
-                //   stripHash={true}
-                  
-                // >
-                // </AnchorLink>
-              }
-              
+              {menu.link[i] && <a href={menu.link[i]} onClick={onClick}>{sm}</a>}
               {!menu.link[i] && <a href='/'>{sm}</a>}
             </li>
           ))}
