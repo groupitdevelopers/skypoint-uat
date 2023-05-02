@@ -175,7 +175,7 @@ const Header = () => {
               <div className="mobileSubMenu">
                 <ul>
                   {MenuList().map((m, i) => ( 
-                   <MobileMenuList key={'menulist-'+i} menu={m} index={i} />
+                   <MobileMenuList key={'menulist-'+i} menu={m} index={i} onClick={menuToggle} />
                   ))}
                 </ul>
                 <div className="social">

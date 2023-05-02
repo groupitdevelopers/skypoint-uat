@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-const MobileMenuList = ({ menu }) => {
+const MobileMenuList = ({ menu, onClick }) => {
 
   const [isActive, setIsActive] = useState(false)
+
   return (
-    <>
+    <li>
       <button
         className='listElement'
         onClick={() => setIsActive(!isActive)}
@@ -20,19 +21,22 @@ const MobileMenuList = ({ menu }) => {
           {menu.subMenu.map((sm, i) => (
             <li key={i}>
               {menu.link[i] &&
-                <AnchorLink
-                  to={menu.link[i]}
-                  title={sm}
-                  stripHash={true}
-                >
-                </AnchorLink>
+                <a href={menu.link[i]} onClick={onClick}>{sm}</a>
+                // <AnchorLink
+                //   to={menu.link[i]}
+                //   title={sm}
+                //   stripHash={true}
+                  
+                // >
+                // </AnchorLink>
               }
+              
               {!menu.link[i] && <a href='/'>{sm}</a>}
             </li>
           ))}
         </ul>
       )}
-    </>
+    </li>
   )
 }
 
