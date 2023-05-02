@@ -9,6 +9,7 @@ function Seo({ children }) {
       <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"></meta>
       <meta name="msapplication-navbutton-color" content="#000000"></meta>
       <meta name="apple-mobile-web-app-status-bar-style" content="#000000"></meta>
+      <meta name="color-scheme" content="dark"></meta>
       {children}
     </>
   )
