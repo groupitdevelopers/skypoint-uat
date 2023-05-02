@@ -316,6 +316,9 @@ export const Head = (props) => (
       `}
     </script>
     <script type="text/javascript" src="https://al-dreamworld.secure-cdn.oc.accessoticketing.com/embed/accesso.js" data-accesso="l=en-au"></script>
+    <meta name="theme-color" content="#000000"></meta>
+    <meta name="msapplication-navbutton-color" content="#000000"></meta>
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000"></meta>
     <meta name="description" content={props.data.prismicHomepage.data.meta_description} />
     <meta name="keywords" content={props.data.prismicHomepage.data.meta_keywords} />
     {props.data.prismicHomepage.data.og_title &&
