@@ -217,7 +217,7 @@ export const Contactform = props => {
                         <p>
                           If your group is between <b>16 and 29 people</b>; We love
                           a good gathering, however there may be some restrictions
-                          to menu itemsto ensure we can deliver a great experience
+                          to menu items to ensure we can deliver a great experience
                           to your group. Please contact us on 07 5582 2700 or
                           info@skypoint.com.au whereour team can advise of the
                           options available
