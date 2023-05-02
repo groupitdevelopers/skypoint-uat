@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 function Seo({ children }) {
   return (
     <>
-      <meta name="color-scheme" content="dark"></meta>
       <meta name="google-site-verification" content="tVEOKsPlVKjH8tUdHrg1_2CR4MYIKednmYl6NWFBiCo" />
       <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"></meta>
       <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"></meta>
