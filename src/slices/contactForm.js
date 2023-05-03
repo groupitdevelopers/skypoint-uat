@@ -436,7 +436,6 @@ export const Contactform = props => {
                     <textarea
                       className="inputTextarea"
                       placeholder="Further Details"
-                      {...register("Message")}
                     />
                   </div>
                 </div>
