@@ -46,22 +46,6 @@ body {
     h3 {
       font-size: 2.5rem;
     }
-
-    // @media screen and ($media-xs) {
-    //   h1 { font-size: 2.8rem; }
-    //   h3 {
-    //     font-size: 2rem;
-    //     font-weight: 400;
-    //   }
-    // }
-    
-    // @media screen and ($media-sm) {
-    //   h1 { font-size: 3.2rem; }
-    //   h3 {
-    //     font-size: 2.2rem;
-    //     font-weight: 400;
-    //   }
-    // }
   }
   
   @media screen and ($media-xs) {
@@ -109,6 +93,13 @@ body {
   }
 }
 
+@media screen and ($media-xs){
+  body{padding-bottom: 10rem}
+}
+
+@media screen and ($media-sm){
+  body{padding-bottom: 10rem}
+}
 
 @import "./src/style/components/welcomeMessage";
 @import "./src/style/components/menu";
