@@ -1,25 +1,12 @@
-import * as React from 'react'
-import {
-  PrismicPreviewProvider,
-  componentResolverFromMap,
-} from 'gatsby-plugin-prismic-previews'
+import * as React from "react";
+import { PrismicPreviewProvider } from "gatsby-plugin-prismic-previews";
+import { repositoryConfigs } from "./config/prismic/previews";
+import "./src/skypoint.scss"
 
-import { linkResolver } from './src/linkResolver'
-import PageTemplate from './src/components/layout'
-// import PageTemplate from './src/pages/{prismicSubpage.uid}'
+export const shouldUpdateScroll = () => false
 
 export const wrapRootElement = ({ element }) => (
-  <PrismicPreviewProvider
-    repositoryConfigs={[
-      {
-        repositoryName: process.env.GATSBY_NAME,
-        linkResolver,
-        componentResolver: componentResolverFromMap({
-          page: PageTemplate,
-        }),
-      },
-    ]}
-  >
+  <PrismicPreviewProvider repositoryConfigs={repositoryConfigs}>
     {element}
   </PrismicPreviewProvider>
-)
+);

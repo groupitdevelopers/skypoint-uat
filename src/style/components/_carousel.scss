@@ -12,8 +12,8 @@
     .alice-carousel__prev-btn-wrapper {
       .alice-carousel__prev-btn-item {
         background-color: $primary-color;
-        -webkit-mask-image: url(../images/svg/Preview.svg);
-        mask-image: url(../images/svg/Preview.svg);
+        -webkit-mask-image: url(./images/svg/Preview.svg);
+        mask-image: url(./images/svg/Preview.svg);
         width: 5rem;
         height: 5rem;
         span {
@@ -34,8 +34,8 @@
     .alice-carousel__next-btn-wrapper {
       .alice-carousel__next-btn-item {
         background-color: $primary-color;
-        -webkit-mask-image: url(../images/svg/Next.svg);
-        mask-image: url(../images/svg/Next.svg);
+        -webkit-mask-image: url(./images/svg/Next.svg);
+        mask-image: url(./images/svg/Next.svg);
         width: 5rem;
         height: 5rem;
         span {
@@ -64,8 +64,6 @@
       }
 
       .dataWrapper {
-        padding-bottom: 2.5rem;
-
         .btn {
           display: block;
           width: 100%;
@@ -80,7 +78,7 @@
         }
 
         .ticket {
-          background-image: url(../images/svg/Ticket.svg);
+          background-image: url(./images/svg/Ticket.svg);
           background-repeat: no-repeat;
           background-position: center center;
           display: flex;
@@ -119,7 +117,7 @@
           margin:  0 2.5rem 2.5rem 2.5rem;
 
           .logo {
-            background: url(../images/afterpay.svg);
+            background: url(./images/afterpay.svg);
             width: 6.5rem;
             height: 2.3rem;
             margin-left: 0.5rem;
@@ -131,7 +129,7 @@
           font-weight: $semiBold;
           font-size: 1.8rem;
           margin:  0 2.5rem 2.5rem 2.5rem;
-          height: 4rem;
+          height: 8rem;
         }
       }
     }

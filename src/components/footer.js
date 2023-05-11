@@ -1,9 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import useWindowSize from './useWindowSize'
 
 export const Footer = props => {
-  const size = useWindowSize()
   const openInNewTab = url => {
     window.open(url, '_blank', 'noopener,noreferrer')
   }
@@ -47,8 +45,8 @@ export const Footer = props => {
 
   return (
     <>
-      {size.width >= 600 && (
-        <section className='footerWrapper mt-3'>
+      {/* Menu Medium Large */}
+        <section className='footerWrapper mt-3 mdV lgV'>
           <div className='container pb-4 '>
             <div className='row'>
               {footer.prismicFooter.data.footer_links.length > 5 && (
@@ -160,7 +158,6 @@ export const Footer = props => {
             </div>
           </div>
         </section>
-      )}
     </>
   )
 }

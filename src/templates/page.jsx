@@ -1,13 +1,28 @@
-import  React, {useEffect} from "react"
-// import { setGlobalState } from "../components/store"
+import  React from "react"
 import { graphql } from "gatsby"
-import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { linkResolver } from "../linkResolver"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
 import { SliceZone } from "@prismicio/react"
 import { components } from "../slices"
-import "./skypoints.scss"
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+
+
+const PageTemplate = ({ data, location }) => {
+  
+  return (
+    <Layout location={location}>
+      <SliceZone
+            slices={data.prismicHomepage.data.body}
+            components={components}
+        />
+    </Layout>
+  )
+}
+
+export const Head = ({ data }) => {
+    const seoData = data.prismicHomepage.data
+    return <Seo seoData={seoData} />
+  }
 
 export const query = graphql`
   {
@@ -33,6 +48,9 @@ export const query = graphql`
               }
               header_text
               video {
+                url
+              }
+              mobile_video {
                 url
               }
               page_type
@@ -122,6 +140,8 @@ export const query = graphql`
                 url
               }
               anchor_id
+              text
+              auto_image_height
             }
           }
           ... on PrismicHomepageDataBodyAccordion {
@@ -235,6 +255,18 @@ export const query = graphql`
               }
             }
           }
+          ... on PrismicHomepageDataBodyTable {
+            id
+            slice_type
+            primary {
+              header_background
+              header_text_color
+            }
+            items {
+              header_text
+              column
+            }
+          }
         }
         meta_description
         meta_keywords
@@ -249,96 +281,4 @@ export const query = graphql`
   }
 `
 
-const IndexPage = props => {
-  
-  useEffect(() => {
-    window.scrollTo(0,0)
-  }, [])
-
-  // function showSubscribeForm() {
-  //   setGlobalState("showSubscribe", true)
-  // }
-
-  // useEffect(
-  //   () => {
-  //     if (typeof window !== 'undefined') {
-  //       const delaySubscribe = sessionStorage.getItem("delaySubscribe")
-  //       const delay = localStorage.getItem("delaySubscribeTime")
-
-  //       if(delaySubscribe === null) {
-  //         let timer = setTimeout(() => showSubscribeForm(), (delay*1000))
-  //         sessionStorage.setItem("delaySubscribe", true)
-  //         return () => {
-  //           clearTimeout(timer);
-  //         }
-  //       }
-  //     }
-  //   },[]
-  // )
- 
-  return (
-    <React.StrictMode>
-      <Layout>
-        <Seo />
-        <SliceZone
-          slices={props.data.prismicHomepage.data.body}
-          components={components}
-        />
-      </Layout>
-    </React.StrictMode>
-  )
-}
-let link = "https://static.cdn.prismic.io/prismic.js?new=true&repo="+process.env.GATSBY_NAME
-
-export const Head = (props) => (
-  <>
-    <title>{props.data.prismicHomepage.data.tab_title +` | SkyPoint`}</title>
-    <script async defer src={link}></script>
-    <noscript><iframe title="frame" src="//www.googletagmanager.com/ns.html?id=GTM-WCSFZ5" height="0" width="0" style={{display:'none'}}></iframe></noscript>
-    <script>{`
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WCSFZ5');
-      `}
-    </script>
-
-    <script>{`
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-      ga('create', 'UA-20174112-1', 'auto');
-      ga('send', 'pageview');
-      `}
-    </script>
-    <script type="text/javascript" src="https://al-dreamworld.secure-cdn.oc.accessoticketing.com/embed/accesso.js" data-accesso="l=en-au"></script>
-    <meta name="description" content={props.data.prismicHomepage.data.meta_description} />
-    <meta name="keywords" content={props.data.prismicHomepage.data.meta_keywords} />
-    {props.data.prismicHomepage.data.og_title &&
-      <meta property="og:title" content={props.data.prismicHomepage.data.og_title} />
-    }
-    {props.data.prismicHomepage.data.og_description &&
-      <meta property="og:description" content={props.data.prismicHomepage.data.og_description} />
-    }
-    {props.data.prismicHomepage.data.og_type &&
-      <meta property="og:type" content={props.data.prismicHomepage.data.og_type} />  
-    }
-    {props.data.prismicHomepage.data.og_url &&
-      <meta property="og:url" content={props.data.prismicHomepage.data.og_url} />
-    }
-
-  </>
-)
-
-export default IndexPage
-
-// export default  withPrismicPreview(IndexPage, [
-//   {
-//     repositoryName: process.env.GATSBY_NAME,
-//     linkResolver,
-//   },
-// ])
+export default withPrismicPreview(PageTemplate);

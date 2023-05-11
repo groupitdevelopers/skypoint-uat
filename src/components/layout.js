@@ -1,25 +1,21 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Header from "./header"
-import Footer from "./footer"
-import SubscribeForm from "./subscribe"
+import React from 'react';
+import Header from "../components/header"
+import Footer from "../components/footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ location, title, children }) => {
+  const rootPath = `${__PATH_PREFIX__}/`
+  const isRootPath = location.pathname === rootPath
+  
 
   return (
-    <>
+    <div className="global-wrapper" data-is-root-path={isRootPath}>
       <Header />
-      <main className="bodyWrapper">
+      <main>
         {children}
         <Footer />
       </main>
-      <SubscribeForm />
-    </>
-  )
-}
+    </div>
+  );
+};
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export default Layout;

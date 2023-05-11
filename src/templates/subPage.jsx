@@ -1,12 +1,29 @@
-import  React, {useEffect} from "react"
+import  React from "react"
 import { graphql } from "gatsby"
-import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { linkResolver } from "../linkResolver"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
 import { SliceZone } from "@prismicio/react"
 import { components } from "../slices"
-import "./skypoints.scss"
+
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+
+
+const SubPageTemplate = ({ data, location }) => {
+
+  return (
+    <Layout location={location} >
+      <SliceZone
+        slices={data.prismicSubpage.data.body}
+        components={components}
+      />
+    </Layout>
+  )
+}
+
+export const Head = ({ data }) => {
+  const seoData = data.prismicSubpage.data
+  return <Seo seoData={seoData} />
+}
 
 export const query = graphql`
   query pageQuery($id: String) {
@@ -28,6 +45,9 @@ export const query = graphql`
               }
               page_type
               anchor_id
+              mobile_video {
+                url
+              }
             }
             items {
               button_type
@@ -234,6 +254,18 @@ export const query = graphql`
               }
             }
           }
+          ... on PrismicSubpageDataBodyTable {
+            id
+            slice_type
+            items {
+              column
+              header_text
+            }
+            primary {
+              header_background
+              header_text_color
+            }
+          }
         }
         meta_description
         meta_keywords
@@ -248,73 +280,4 @@ export const query = graphql`
   }
 `
 
-const SubPage = props => {
-
-  useEffect(() => {
-    window.scrollTo(0,0)
-  }, [])
-
-  return (
-    <Layout>
-      <Seo />
-      <SliceZone
-        slices={props.data.prismicSubpage.data.body}
-        components={components}
-      />
-    </Layout>
-  )
-}
-
-let link = "https://static.cdn.prismic.io/prismic.js?new=true&repo="+process.env.GATSBY_NAME
-
-export const Head = (props) => (
-  <>
-    <title>{props.data.prismicSubpage.data.tab_title +` | SkyPoint`}</title>
-    <noscript><iframe title="frame" src="//www.googletagmanager.com/ns.html?id=GTM-WCSFZ5" height="0" width="0" style={{display:'none'}}></iframe></noscript>
-    <script async defer src={link}></script>
-    <script>{`
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WCSFZ5');
-      `}
-    </script>
-
-    <script>{`
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-      ga('create', 'UA-20174112-1', 'auto');
-      ga('send', 'pageview');
-      `}
-    </script>
-    <script type="text/javascript" src="https://al-dreamworld.secure-cdn.oc.accessoticketing.com/embed/accesso.js" data-accesso="l=en-au"></script>
-    <meta name="description" content={props.data.prismicSubpage.data.meta_description} />
-    <meta name="keywords" content={props.data.prismicSubpage.data.meta_keywords} />
-    {props.data.prismicSubpage.data.og_title &&
-      <meta property="og:title" content={props.data.prismicSubpage.data.og_title} />
-    }
-    {props.data.prismicSubpage.data.og_description &&
-      <meta property="og:description" content={props.data.prismicSubpage.data.og_description} />
-    }
-    {props.data.prismicSubpage.data.og_type &&
-      <meta property="og:type" content={props.data.prismicSubpage.data.og_type} />  
-    }
-    {props.data.prismicSubpage.data.og_url &&
-      <meta property="og:url" content={props.data.prismicSubpage.data.og_url} />
-    }
-  </>
-)
-
-export default SubPage
-
-// export default withPrismicPreview(IndexPage, [
-//   {
-//     repositoryName: process.env.GATSBY_NAME,
-//     linkResolver,
-//   },
-// ])
+export default withPrismicPreview(SubPageTemplate);

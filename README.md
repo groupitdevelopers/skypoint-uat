@@ -34,14 +34,10 @@
 
 4.  **.env File for Prismic Variable**
 
-    GATSBY_PRISMIC_REPOSITORY_NAME_DEV = [Repository Name]
-    GATSBY_PRISMIC_REPOSITORY_NAME_UAT = [Repository Name]
-    GATSBY_PRISMIC_REPOSITORY_NAME_PROD = [Repository Name]
-    
-    GATSBY_PRISMIC_CUSTOM_TYPES_API_TOKEN_DEV = [Token]
-    GATSBY_PRISMIC_CUSTOM_TYPES_API_TOKEN_UAT = [Token]
-    GATSBY_PRISMIC_CUSTOM_TYPES_API_TOKEN_PROD = [Token]
-    
+    GATSBY_PRISMIC_REPO_NAME = [Repository Name]
+    PRISMIC_ACCESS_TOKEN = [Token]
+    PRISMIC_CUSTOM_TYPES_API_TOKEN = [Token]
+
     ENABLE_GATSBY_REFRESH_ENDPOINT = true
 
     // Refresh api connection [local]

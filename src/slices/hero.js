@@ -1,16 +1,14 @@
 import React from "react"
-import useWindowSize from "../components/useWindowSize"
 
 export const Hero = props => {
   const cls = props.slice.primary.page_type ? "hero" : "subHero"
   const anchorId = props.slice.primary.anchor_id
-  const size = useWindowSize()
   
   return (
     <>
-      {(!props.slice.primary.background_type || size.width < 900) && (
+      {!props.slice.primary.background_type  && (
           <section
-            className={cls}
+            className={`${cls}`}
             style={{
               backgroundImage: `url(${props.slice.primary.background.url})`,
             }}
@@ -36,11 +34,18 @@ export const Hero = props => {
           </div>
         </section>
       )}
-      {(props.slice.primary.background_type && size.width > 900) && (
-        <section className={cls}>
-          <video playsInline autoPlay muted loop className="videoBackground">
+      {props.slice.primary.background_type && (
+        <section 
+          className={`${cls}`}
+        >
+          <video playsInline autoPlay muted loop className="videoBackground mdV lgV">
             <source src={props.slice.primary.video.url} type="video/mp4" />
           </video>
+
+          <video playsInline autoPlay muted loop className="videoBackground xsV smV">
+            <source src={props.slice.primary.mobile_video.url} type="video/mp4" />
+          </video>
+
           <div className="container">
             <div className="row">
               <div className="txt-white p-3 hero-text">

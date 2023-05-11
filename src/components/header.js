@@ -1,16 +1,12 @@
 import * as React from "react"
 import { useEffect, useState } from "react"
-import PropTypes from "prop-types"
 import { PrismicRichText } from "@prismicio/react"
 import { useStaticQuery, graphql } from "gatsby"
-import useWindowSize from "./useWindowSize"
 import MobileMenuList from "./mobileMenu"
 import { Link } from "gatsby"
 
 const Header = () => {
-  const size = useWindowSize()
   const [scroll, setScroll] = useState(false)
-  const [isOpened, setIsOpened] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const openInNewTab = url => {
     window.open(url, '_blank', 'noopener,noreferrer')
@@ -23,10 +19,6 @@ const Header = () => {
   }, [])
 
   function handleClick() {}
-
-  function headToggle() {
-    setIsOpened(wasOpened => !wasOpened)
-  }
 
   function menuToggle() {
     setIsMenuOpen(wasMenuOpened => !wasMenuOpened)
@@ -111,51 +103,35 @@ const Header = () => {
         <section
           className={`welcomeMessageWrapper bg-${headerElement.prismicNavigation.data.background}`}
         >
-          {size.width < 600 && (
-            <div
-              role="button"
-              tabIndex={0}
-              className={`txt-${headerElement.prismicNavigation.data.text_colour} showButton`}
-              onClick={headToggle}
-              onKeyDown={handleKeyDown}
-            >
-              Click to see latest updates
-              {isOpened && <span> -</span>}
-              {!isOpened && <span> +</span>}
-            </div>
-          )}
-          {(size.width >= 600 || isOpened) && (
-            <PrismicRichText
-              className={`txt-${headerElement.prismicNavigation.data.text_colour}`}
-              field={headerElement.prismicNavigation.data.top_message.richText}
-              components={{
-                hyperlink: ({ node, children, key }) => (
-                  <>
-                    {node.data.uid &&(
-                      <Link to={`/${node.data.uid}`} key={key}>
-                        {children}
-                      </Link>
-                    )}
-                    {!node.data.uid &&(
-                      <Link to={node.data.url} key={key}>
-                        {children}
-                      </Link>
-                    )}
-                  </>
-                )
-              }}
-            />
-          )}
+          <PrismicRichText
+            className={`txt-${headerElement.prismicNavigation.data.text_colour} `}
+            field={headerElement.prismicNavigation.data.top_message.richText}
+            components={{
+              hyperlink: ({ node, children, key }) => (
+                <>
+                  {node.data.uid &&(
+                    <Link to={`/${node.data.uid}`} key={key}>
+                      {children}
+                    </Link>
+                  )}
+                  {!node.data.uid &&(
+                    <Link to={node.data.url} key={key}>
+                      {children}
+                    </Link>
+                  )}
+                </>
+              )
+            }}
+          />
         </section>
       )}
       <section className="menuWrapper">
-        {/* Mobile Menu */}
-        {size.width < 900 && (
-          <>
-            <nav className={scroll ? "stickyMobileMenu" : "mobileMenu"}>
+        {/* Mobile Menu Extra Small and Small */}
+          <div className="xsV smV">
+            <nav className={scroll ? "stickyMobileMenu mobileMenu" : "mobileMenu"}>
               <ul>
                 <li key="logoKeyMobile">
-                  <a href="/">
+                  <a href="/" aria-label="Home Page">
                     <div className="mobileLogo"></div>
                   </a>
                 </li>
@@ -214,15 +190,14 @@ const Header = () => {
             >
               BUY TICKETS
             </a>
-          </>
-        )}
+          </ div>
 
-        {/* Menu */}
-        {size.width >= 900 && (
-          <nav className={scroll ? "stickyMenu" : "menu"}>
+        {/* Menu Medium Large */}
+        <div className="mdV lgV">
+          <nav className={scroll ? "stickyMenu menu" : "menu"}>
             <ul>
               <li key="logoKeyDesktop">
-                <a href="/">
+                <a href="/" aria-label="Home Page">
                   <div className="logo"></div>
                 </a>
               </li>
@@ -236,7 +211,7 @@ const Header = () => {
                           {m.subMenu.map((sm, j) => (
                             <li key={'Submenu-'+j}>
                               {m.link[j] && <a href={m.link[j]}>{sm}</a>}
-                              {!m.link[j] && <a href="/">{sm}</a>}
+                              {!m.link[j] && <a href="/" aria-label="Home Page">{sm}</a>}
                             </li>
                           ))}
                         </ul>
@@ -255,18 +230,10 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-        )}
+        </div>
       </section>
     </>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

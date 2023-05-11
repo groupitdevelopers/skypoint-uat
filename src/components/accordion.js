@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import useWindowSize from "./useWindowSize"
 
 const Accordion = ({
   title,
@@ -11,7 +10,6 @@ const Accordion = ({
 }) => {
   const [isActive, setIsActive] = useState(false)
   const isOdd = require("is-odd")
-  const size = useWindowSize()
   const List = ({ number }) => {
     if (number < 10) number = "0" + (number + 1)
     return number
@@ -21,15 +19,14 @@ const Accordion = ({
     <>
       {isListType && (
         <div className="accordionItem">
-          {size.width < 900 && (
-            <>
-              <div className="mobileLeftSide">
+          {/* Mobile Menu Extra Small and Small */}
+              <div className="mobileLeftSide xsV smV">
                 <div className="middleLine"></div>
                 <div className={`listBox bg-${headerType}`}>
                   <List number={list} />
                 </div>
               </div>
-              <div className="mobileRightSide">
+              <div className="mobileRightSide xsV smV">
                 <div
                   className={`accordionTitle col p-0 mb-1 txt-${headerColor}`}
                 >
@@ -37,11 +34,10 @@ const Accordion = ({
                 </div>
                 <div className="accordionContent">{content}</div>
               </div>
-            </>
-          )}
-          {size.width >= 900 && (
-            <>
-              <div className="leftSide">
+          
+          {/* Menu Medium Large */}
+            {/* <div className="mdV lgV"> */}
+              <div className="leftSide mdV lgV">
                 {isOdd(list) && (
                   <>
                     <div
@@ -53,13 +49,13 @@ const Accordion = ({
                   </>
                 )}
               </div>
-              <div className="middle">
+              <div className="middle mdV lgV">
                 <div className="middleLine"></div>
                 <div className={`listBox bg-${headerType}`}>
                   <List number={list} />
                 </div>
               </div>
-              <div className="rightSide">
+              <div className="rightSide mdV lgV">
                 {!isOdd(list) && (
                   <>
                     <div
@@ -71,9 +67,8 @@ const Accordion = ({
                   </>
                 )}
               </div>
-            </>
-          )}
-        </div>
+            {/* </div> */}
+          </div>
       )}
 
       {!isListType && (

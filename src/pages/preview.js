@@ -1,15 +1,14 @@
-// import * as React from 'react'
-import { withPrismicPreviewResolver } from 'gatsby-plugin-prismic-previews'
+import * as React from "react";
+import { withPrismicPreviewResolver } from "gatsby-plugin-prismic-previews";
 
-// Update the path to your Link Resolver
-import { linkResolver } from '../linkResolver'
-const PreviewPage = ({ data }) => {
-  // Your Page component
-}
+const PreviewPage = ({ isPreview, ...props }) => {
+  if (isPreview === false) return "Not a preview!";
 
-export default withPrismicPreviewResolver(PreviewPage, [
-  {
-    repositoryName: process.env.GATSBY_NAME,
-    linkResolver,
-  },
-])
+  return (
+    <small style={{ textAlign: "center", marginTop: "30px", display: "block" }}>
+      Loading...
+    </small>
+  );
+};
+
+export default withPrismicPreviewResolver(PreviewPage);

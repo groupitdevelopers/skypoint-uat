@@ -1,70 +1,60 @@
+const { linkResolver } = require("./config/prismic/link-resolver");
+
 require("dotenv").config({
   path: `.env`,
 })
 
 module.exports = {
   siteMetadata: {
-    title: `SkyPoint`,
-    description: `SkyPoint`,
-    author: `@rezso.dubiczki`,
-    siteUrl: `https://www.skypoint.com.au`,
+    title: `Skypoint`,
+    siteUrl: `https://skypoint.com.au`
   },
   plugins: [
+    "gatsby-plugin-sass",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        trackingIds: ["UA-20174112-1"],
-          pluginConfig: {
-            head: true
-          }
+        name: "images",
+        path: "./src/images/",
       },
+      __key: "images",
     },
     {
-      resolve: `gatsby-source-prismic`,
+      resolve: "gatsby-source-prismic",
       options: {
-        repositoryName: process.env.GATSBY_NAME,
-        customTypesApiToken: process.env.GATSBY_API_TOKEN,
-        linkResolver: require('./src/linkResolver').linkResolver,
-      },
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
+        linkResolver: (doc) => linkResolver(doc),
+      }
     },
     {
-      resolve: 'gatsby-plugin-prismic-previews',
+      resolve: "gatsby-plugin-prismic-previews",
       options: {
-        repositoryName: process.env.GATSBY_NAME,
-        accessToken: process.env.GATSBY_API_TOKEN,
-        linkResolver: require('./src/linkResolver'),
-      },
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN
+      }
     },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     start_url: '/',
+    //     background_color: '#f7f0eb',
+    //     theme_color: '#a2466c',
+    //     display: 'standalone',
+    //     icon: './src/images/icon-512x512.png',
+    //   }
+    // },
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        offset: -85,
+        offset: -135,
         duration: 300
       }
     },
-
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-image`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-gatsby-cloud`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'React go',
-        short_name: 'Reactgo',
-        start_url: '/',
-        background_color: '#f7f0eb',
-        theme_color: '#a2466c',
-        display: 'standalone',
-        icon: 'src/images/icon-512x512.png',
-      },
-    }
   ]
 }

@@ -1,9 +1,7 @@
 import React from "react"
-import useWindowSize from "../components/useWindowSize"
 import Button from '../components/button'
 
 export const Text = props => {
-  const size = useWindowSize()
   const anchorId = props.slice.primary.anchor_id
   const data = props.slice.primary
   
@@ -14,8 +12,8 @@ export const Text = props => {
     >
       {props.slice.primary.type === "Left" && (
         <>
-          {size.width < 900 && (
-            <>
+          {/* Mobile Menu Extra Small and Small */}
+            <div className="xsV smV">
               <div className="row mx-2">
                 <div className="col_half m-0 p-0">
                   <div className="col m-0 pl-0 txt-left">
@@ -47,10 +45,9 @@ export const Text = props => {
                   />
                 </div>
               </div>
-            </>
-          )}
-          {size.width >= 900 && (
-            <>
+            </div>
+          {/* Menu Medium Large */}
+          <div className="mdV lgV">
               <div className="row">
                 <div className="col_half m-0 p-0">
                   <div className="row">
@@ -87,15 +84,14 @@ export const Text = props => {
                 </div>
                 <div className="col_half m-0"></div>
               </div>
-            </>
-          )}
+            </div>
         </>
       )}
 
       {props.slice.primary.type === "Center" && (
         <>
-          {size.width < 900 && (
-            <>
+          {/* Mobile Menu Extra Small and Small */}
+          <div className="xsV smV">
               <div className="row">
                 <div className="col m-0">
                   <h2
@@ -124,10 +120,9 @@ export const Text = props => {
                   />
                 </div>
               </div>
-            </>
-          )}
-          {size.width >= 900 && (
-            <>
+            </div>
+          {/* Menu Medium Large */}
+            <div className="mdV lgV">
               <div className="row">
                 <div className="col m-0">
                   <div className="row">
@@ -160,15 +155,14 @@ export const Text = props => {
                   />
                 </div>
               </div>
-            </>
-          )}
+            </div>
         </>
       )}
 
       {props.slice.primary.type === "Right" && (
         <>
-          {size.width < 900 && (
-            <>
+          {/* Mobile Menu Extra Small and Small */}
+          <div className="xsV smV">
               <div className="row mx-2">
                 <div className="col_half m-0"></div>
                 <div className="col m-0 pr-0 txt-right">
@@ -196,10 +190,9 @@ export const Text = props => {
                   />
                 </div>
               </div>
-            </>
-          )}
-          {size.width >= 900 && (
-            <>
+            </div>
+          {/* Menu Medium Large */}
+          <div className="mdV lgV">
               <div className="row">
                 <div className="col_half m-0"></div>
                 <div className="col_half m-0 p-0">
@@ -236,8 +229,7 @@ export const Text = props => {
                   />
                 </div>
               </div>
-            </>
-          )}
+            </div>
         </>
       )}
     </section>

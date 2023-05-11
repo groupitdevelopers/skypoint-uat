@@ -1,17 +1,14 @@
 import React from "react"
-import useWindowSize from "../components/useWindowSize"
 import Button from '../components/button'
 
 export const DoubleCard = props => {
-  const size = useWindowSize()
   const anchorId = props.slice.primary.anchor_id
   const data = props.slice.primary
 
   function Images() {
     let images = []
-    props.slice.items.map(img => images.push(img.image.url))
-
     let response
+    props.slice.items.map(img => images.push(img.image.url))
 
     switch (images.length) {
       case 1:
@@ -63,8 +60,8 @@ export const DoubleCard = props => {
       className="container doubleCardWrapper"
       id = {anchorId}
     >
-      {size.width < 900 && (
-        <>
+       {/* Mobile Menu Extra Small and Small */}
+       <div className="xsV smV">
           <div className="row">
             <div className="col p-0">
               <Images />
@@ -90,10 +87,9 @@ export const DoubleCard = props => {
                     accessoPackageId={data.accesso_packageid}
                   />
           </div>
-        </>
-      )}
-      {size.width >= 900 && (
-        <>
+        </div>
+      {/* Menu Medium Large */}
+      <div className="mdV lgV">
           {props.slice.primary.image_position ? (
             <div className="row">
               <div className="col_half box_padding_right">
@@ -155,8 +151,7 @@ export const DoubleCard = props => {
               </div>
             </div>
           )}
-        </>
-      )}
+        </div>
     </section>
   )
 }
