@@ -12,15 +12,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
-    // "gatsby-plugin-sitemap",
-    // "gatsby-plugin-sharp",
-    // "gatsby-transformer-sharp",
-    {
-      resolve: 'gatsby-plugin-zopfli',
-      options: {
-        extensions: ['css', 'html', 'js', 'svg', 'jsx']
-      }
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
