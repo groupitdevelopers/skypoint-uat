@@ -47,6 +47,8 @@ const Seo = ({seoData, children }) => {
       <meta name="theme-color" content="#1a5d8d" media="(prefers-color-scheme: dark)"></meta>
       <meta name="theme-color" content="#1a5d8d" media="(prefers-color-scheme: light)"></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"></meta>
+      <meta name="robots" content="noindex"/>
+      <meta name="Googlebot" content="noindex"/>
       {children}
     </>
   );
