@@ -5,9 +5,9 @@ const Seo = ({seoData, children }) => {
   return (
     <>
       <title>{seoData.tab_title +` | SkyPoint`}</title>
-      <script async defer src={link}></script>
+      <script type="module" async defer src={link}></script>
       <noscript><iframe title="frame" src="//www.googletagmanager.com/ns.html?id=GTM-WCSFZ5" height="0" width="0" style={{display:'none'}}></iframe></noscript>
-      <script>{`
+      <script type="module">{`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -16,7 +16,7 @@ const Seo = ({seoData, children }) => {
         `}
       </script>
 
-      <script>{`
+      <script type="module">{`
         (function (i, s, o, g, r, a, m) {
           i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
             (i[r].q = i[r].q || []).push(arguments)
@@ -27,7 +27,7 @@ const Seo = ({seoData, children }) => {
         ga('send', 'pageview');
         `}
       </script>
-      <script type="text/javascript" src="https://al-dreamworld.secure-cdn.oc.accessoticketing.com/embed/accesso.js" data-accesso="l=en-au"></script>
+      <script type="module" src="https://al-dreamworld.secure-cdn.oc.accessoticketing.com/embed/accesso.js" data-accesso="l=en-au"></script>
       <meta name="description" content={seoData.meta_description} />
       <meta name="keywords" content={seoData.meta_keywords} />
       {seoData.og_title &&
