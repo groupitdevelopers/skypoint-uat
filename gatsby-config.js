@@ -42,7 +42,7 @@ module.exports = {
       options: {
         start_url: '/',
         background_color: '#0054a8',
-        theme_color: '#a2466c',
+        theme_color: '#0054a8',
         display: 'standalone',
         icon: './src/images/icon-512x512.png',
       }
