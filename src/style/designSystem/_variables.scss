@@ -33,8 +33,8 @@ $containerWidth: (
 //COLORS
 $primary-color: rgba(0, 84, 168, 1);
 $secondary-color: rgba(231, 123, 28, 1);
-$success-color: rgb(55 167 234);
-$info-color: rgb(0 158 176);
+$success-color: rgba(200, 233, 245, 1);
+$info-color: rgba(56, 170, 183, 1);
 $light-color: rgba(241, 241, 241, 1);
 $dark-color: rgb(0, 39, 68);
 $white-color: rgba(255, 255, 255, 1);
@@ -58,8 +58,8 @@ $colorNames: (
 $colorPalette: (
   "0": rgba(0, 84, 168, 1),
   "1": rgba(231, 123, 28, 1),
-  "2": rgb(55 167 234),
-  "3": rgb(0 158 176),
+  "2": rgba(200, 233, 245, 1),
+  "3": rgba(56, 170, 183, 1),
   "4": rgba(241, 241, 241, 1),
   "5": rgba(33, 33, 33, 1),
   "6": rgba(255, 255, 255, 1),

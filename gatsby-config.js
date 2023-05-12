@@ -12,9 +12,9 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    // "gatsby-plugin-sitemap",
+    // "gatsby-plugin-sharp",
+    // "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {

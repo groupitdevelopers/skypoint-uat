@@ -47,7 +47,7 @@ $radius: 0;
   $colorCode: map-get($colorPalette, $c);
   $borderColor: $colorCode;
 
-  @if $color == "light" or $color == "white" {
+  @if $color == "light" or $color == "white" or $color == "success" {
     $textColor: $primary-color;
   }
 
