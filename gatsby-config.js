@@ -16,6 +16,12 @@ module.exports = {
     // "gatsby-plugin-sharp",
     // "gatsby-transformer-sharp",
     {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        extensions: ['css', 'html', 'js', 'svg', 'jsx']
+      }
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
@@ -44,7 +50,7 @@ module.exports = {
       options: {
         start_url: '/',
         background_color: '#0054a8',
-        theme_color: '#0054a8',
+        theme_color: '#a2466c',
         display: 'standalone',
         icon: './src/images/icon-512x512.png',
       }
