@@ -16,12 +16,6 @@ module.exports = {
     // "gatsby-plugin-sharp",
     // "gatsby-transformer-sharp",
     {
-      resolve: 'gatsby-plugin-zopfli',
-      options: {
-        extensions: ['css', 'html', 'js', 'svg']
-      }
-    },
-    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
@@ -49,8 +43,8 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         start_url: '/',
-        background_color: '#f7f0eb',
-        theme_color: '#a2466c',
+        background_color: '#0054a8',
+        theme_color: '#0054a8',
         display: 'standalone',
         icon: './src/images/icon-512x512.png',
       }
@@ -62,5 +56,18 @@ module.exports = {
         duration: 300
       }
     },
+    {
+    resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Poppins`,
+            file: `https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap`,
+          },
+        ],
+      }
+    }
   ]
 }
