@@ -11,4 +11,4 @@ const PreviewPage = ({ isPreview, ...props }) => {
   );
 };
 
-export default withPrismicPreviewResolver(PreviewPage);
+export default withPrismicPreviewResolver(PreviewPage)
