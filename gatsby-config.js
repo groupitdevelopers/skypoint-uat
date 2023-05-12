@@ -16,6 +16,12 @@ module.exports = {
     // "gatsby-plugin-sharp",
     // "gatsby-transformer-sharp",
     {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        extensions: ['css', 'html', 'js', 'svg']
+      }
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
