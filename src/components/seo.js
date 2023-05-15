@@ -6,7 +6,7 @@ const Seo = ({seoData, children }) => {
     <>
       <title>{seoData.tab_title +` | SkyPoint`}</title>
       <script async defer src={link}></script>
-      <noscript><iframe title="frame" src="//www.googletagmanager.com/ns.html?id=GTM-WCSFZ5" height="0" width="0" style={{display:'none'}}></iframe></noscript>
+      <noscript><iframe title="frame" src="//www.googletagmanager.com/ns.html?id=GTM-WCSFZ5" height="0" width="0" style={{display:'none'}} frameborder="0" allow="autoplay; encrypted-media"></iframe></noscript>
       <script>{`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
