@@ -11,8 +11,8 @@ const Widget = ({ icon, header, title, iconColor, headerType, widgetType }) => {
   useEffect(() => {
     let tokenLink = "https://spforms.ardentleisure.com/parksapi/gettoken"
     let token = ""
-    let weatherLink = "http://prk-prod-ms-public-254646448.ap-southeast-2.elb.amazonaws.com/parksapi/OpenWeather?location=3"
-    let tradingHoursLink = "http://prk-prod-ms-public-254646448.ap-southeast-2.elb.amazonaws.com/parksapi/TradingHours/GetToday?location=3"
+    let weatherLink = "https://spforms.ardentleisure.com/parksapi/OpenWeather?location=3"
+    let tradingHoursLink = "https://spforms.ardentleisure.com/parksapi/TradingHours/GetToday?location=3"
     let weatherData = {}
 
     const load = async () => {
@@ -46,14 +46,16 @@ const Widget = ({ icon, header, title, iconColor, headerType, widgetType }) => {
         })
         .then(response => response.json())
         .then(responseData => {
-          let today = new Date().toISOString().slice(0, -14)
+          let d = new Date()
+          let month = (d.getMonth()+1)<10 ? "0"+(d.getMonth()+1) : d.getMonth()+1
+          let today = d.getFullYear()+"-"+month+"-"+d.getDate()
           responseData.daily.forEach(day => {
             if(day.dt.slice(0, -10) === today) {
               let des = day.weather[0].spLongDescription
-              // weatherData.view = des.charAt(0).toUpperCase() + des.slice(1)
               weatherData.view = des
               weatherData.sunset = sunsetTimeCalculation(day.sunset)
               setWeather(weatherData)
+              console.log("WH: ",weatherData)
             }
           })
         })
