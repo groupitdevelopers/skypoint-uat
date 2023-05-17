@@ -72,9 +72,8 @@ const Widget = ({ icon, header, title, iconColor, headerType, widgetType }) => {
             "Access-Control-Allow-Origin": "*",
           },
         })
-        .then(res => res.json(console.dir( "DDD",res)))
+        .then(res => res.json())
         .then(resData => {
-          console.dir( "DDD",resData)
           let hoursToday = resData.tradingHoursString
           setHoursData(hoursToday)
         })
