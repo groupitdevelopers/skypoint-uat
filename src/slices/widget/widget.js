@@ -55,13 +55,13 @@ const Widget = ({ icon, header, title, iconColor, headerType, widgetType }) => {
               weatherData.view = des
               weatherData.sunset = sunsetTimeCalculation(day.sunset)
               setWeather(weatherData)
-              console.log("WH: ",weatherData)
             }
           })
         })
         .catch(err => {
           console.log("NETWORK ERROR!")
         })
+
 
         fetch(tradingHoursLink, {
           method: "GET",
@@ -72,8 +72,9 @@ const Widget = ({ icon, header, title, iconColor, headerType, widgetType }) => {
             "Access-Control-Allow-Origin": "*",
           },
         })
-        .then(res => res.json())
+        .then(res => res.json(console.dir( "DDD",res)))
         .then(resData => {
+          console.dir( "DDD",resData)
           let hoursToday = resData.tradingHoursString
           setHoursData(hoursToday)
         })
