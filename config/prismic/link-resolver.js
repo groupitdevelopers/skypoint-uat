@@ -8,7 +8,7 @@ exports.linkResolver = (doc) => {
       return `/${doc.uid}`;
 
     default:
-      if (!doc.uid) return "/";
+      if (doc.uid==="homepage") return "/";
       return doc.uid;
   }
 };

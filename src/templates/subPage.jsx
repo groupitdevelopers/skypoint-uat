@@ -8,10 +8,10 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 
-const SubPageTemplate = ({ data, location }) => {
+const SubPageTemplate = ({ data }) => {
 
   return (
-    <Layout location={location} >
+    <Layout>
       <SliceZone
         slices={data.prismicSubpage.data.body}
         components={components}

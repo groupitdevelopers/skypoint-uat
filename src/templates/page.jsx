@@ -7,10 +7,10 @@ import Layout from "../components/layout";
 import Seo from "../components/seo";
 
 
-const PageTemplate = ({ data, location }) => {
+const PageTemplate = ({ data }) => {
   
   return (
-    <Layout location={location}>
+    <Layout>
       <SliceZone
             slices={data.prismicHomepage.data.body}
             components={components}
