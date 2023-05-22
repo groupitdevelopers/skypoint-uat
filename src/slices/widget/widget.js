@@ -34,7 +34,6 @@ const Widget = ({ icon, header, title, iconColor, headerType, widgetType }) => {
       .then(response => response.json())
       .then(data => {
         token = data.token
-        console.log(token)
         fetch(weatherLink, {
           method: "GET",
           headers: {
