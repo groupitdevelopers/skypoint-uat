@@ -40,7 +40,7 @@ module.exports = {
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
         customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
         releaseId: process.env.PRISMIC_RELEASE_ID,
-        linkResolver: (doc) => linkResolver(doc)
+        // linkResolver: (doc) => linkResolver(doc)
       }
     },
     {

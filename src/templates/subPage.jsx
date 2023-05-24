@@ -2,8 +2,7 @@ import  React from "react"
 import { graphql } from "gatsby"
 import { SliceZone } from "@prismicio/react"
 import { components } from "../slices"
-
-// import { withPrismicPreview } from "gatsby-plugin-prismic-previews"
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -280,5 +279,5 @@ export const query = graphql`
   }
 `
 
-// export default withPrismicPreview(SubPageTemplate);
-export default SubPageTemplate
+export default withPrismicPreview(SubPageTemplate)
+// export default SubPageTemplate
