@@ -99,6 +99,7 @@ export const query = graphql`
               accesso_packageid
               accesso_promo_code
               anchor_link
+              visible
             }
             items {
               image {

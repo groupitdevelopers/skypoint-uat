@@ -3,6 +3,7 @@ import Button from '../components/button'
 
 export const DoubleCard = props => {
   const anchorId = props.slice.primary.anchor_id
+  const visible = props.slice.primary.visible
   const data = props.slice.primary
 
   function Images() {
@@ -56,102 +57,106 @@ export const DoubleCard = props => {
   }
 
   return (
-    <section
-      className="container doubleCardWrapper"
-      id = {anchorId}
-    >
-       {/* Mobile Menu Extra Small and Small */}
-       <div className="xsV smV">
-          <div className="row">
-            <div className="col p-0">
-              <Images />
-            </div>
-          </div>
-          <div
-            className={`doubleCardRight col bg-${props.slice.primary.text_box_background}`}
-          >
-            <h1 className={`txt-${props.slice.primary.header_type}`}>
-              {props.slice.primary.header_text}
-            </h1>
-            <p className={`txt-lg txt-${props.slice.primary.text_color} p-0`}>
-              {props.slice.primary.body_text}
-            </p>
-            <Button 
-                    buttonText={data.button_text}
-                    buttonType={data.button_type}
-                    buttonLinkUrl={data.button_link.url}
-                    buttonLinkUid={data.button_link.uid}
-                    buttonAnchorLink={data.anchor_link}
-                    accessoPromo={data.accesso_promo_code}
-                    accessoKeyword={data.accesso_keyword}
-                    accessoPackageId={data.accesso_packageid}
-                  />
-          </div>
-        </div>
-      {/* Menu Medium Large */}
-      <div className="mdV lgV">
-          {props.slice.primary.image_position ? (
+    <>
+    { visible && (
+      <section
+        className="container doubleCardWrapper"
+        id = {anchorId}
+      >
+        {/* Mobile Menu Extra Small and Small */}
+        <div className="xsV smV">
             <div className="row">
-              <div className="col_half box_padding_right">
-                <Images />
-              </div>
-              <div className="col_half box_padding_left">
-                <div
-                  className={`doubleCardRight col bg-${props.slice.primary.text_box_background}`}
-                >
-                  <h1 className={`txt-${props.slice.primary.header_type}`}>
-                    {props.slice.primary.header_text}
-                  </h1>
-                  <p
-                    className={`txt-lg txt-${props.slice.primary.text_color} p-0`}
-                  >
-                    {props.slice.primary.body_text}
-                  </p>
-                  <Button 
-                    buttonText={data.button_text}
-                    buttonType={data.button_type}
-                    buttonLinkUrl={data.button_link.url}
-                    buttonLinkUid={data.button_link.uid}
-                    buttonAnchorLink={data.anchor_link}
-                    accessoPromo={data.accesso_promo_code}
-                    accessoKeyword={data.accesso_keyword}
-                    accessoPackageId={data.accesso_packageid}
-                  />
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="row">
-              <div className="col_half box_padding_right">
-                <div
-                  className={`doubleCardLeft col bg-${props.slice.primary.text_box_background}`}
-                >
-                  <h1 className={`txt-${props.slice.primary.header_type}`}>
-                    {props.slice.primary.header_text}
-                  </h1>
-                  <p
-                    className={`txt-lg txt-${props.slice.primary.text_color} p-0`}
-                  >
-                    {props.slice.primary.body_text}
-                  </p>
-                  <Button 
-                    buttonText={data.button_text}
-                    buttonType={data.button_type}
-                    buttonLinkUrl={data.button_link.url}
-                    buttonLinkUid={data.button_link.uid}
-                    buttonAnchorLink={data.anchor_link}
-                    accessoPromo={data.accesso_promo_code}
-                    accessoKeyword={data.accesso_keyword}
-                    accessoPackageId={data.accesso_packageid}
-                  />
-                </div>
-              </div>
-              <div className="col_half box_padding_left">
+              <div className="col p-0">
                 <Images />
               </div>
             </div>
-          )}
-        </div>
-    </section>
+            <div
+              className={`doubleCardRight col bg-${props.slice.primary.text_box_background}`}
+            >
+              <h1 className={`txt-${props.slice.primary.header_type}`}>
+                {props.slice.primary.header_text}
+              </h1>
+              <p className={`txt-lg txt-${props.slice.primary.text_color} p-0`}>
+                {props.slice.primary.body_text}
+              </p>
+              <Button 
+                      buttonText={data.button_text}
+                      buttonType={data.button_type}
+                      buttonLinkUrl={data.button_link.url}
+                      buttonLinkUid={data.button_link.uid}
+                      buttonAnchorLink={data.anchor_link}
+                      accessoPromo={data.accesso_promo_code}
+                      accessoKeyword={data.accesso_keyword}
+                      accessoPackageId={data.accesso_packageid}
+                    />
+            </div>
+          </div>
+        {/* Menu Medium Large */}
+        <div className="mdV lgV">
+            {props.slice.primary.image_position ? (
+              <div className="row">
+                <div className="col_half box_padding_right">
+                  <Images />
+                </div>
+                <div className="col_half box_padding_left">
+                  <div
+                    className={`doubleCardRight col bg-${props.slice.primary.text_box_background}`}
+                  >
+                    <h1 className={`txt-${props.slice.primary.header_type}`}>
+                      {props.slice.primary.header_text}
+                    </h1>
+                    <p
+                      className={`txt-lg txt-${props.slice.primary.text_color} p-0`}
+                    >
+                      {props.slice.primary.body_text}
+                    </p>
+                    <Button 
+                      buttonText={data.button_text}
+                      buttonType={data.button_type}
+                      buttonLinkUrl={data.button_link.url}
+                      buttonLinkUid={data.button_link.uid}
+                      buttonAnchorLink={data.anchor_link}
+                      accessoPromo={data.accesso_promo_code}
+                      accessoKeyword={data.accesso_keyword}
+                      accessoPackageId={data.accesso_packageid}
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="row">
+                <div className="col_half box_padding_right">
+                  <div
+                    className={`doubleCardLeft col bg-${props.slice.primary.text_box_background}`}
+                  >
+                    <h1 className={`txt-${props.slice.primary.header_type}`}>
+                      {props.slice.primary.header_text}
+                    </h1>
+                    <p
+                      className={`txt-lg txt-${props.slice.primary.text_color} p-0`}
+                    >
+                      {props.slice.primary.body_text}
+                    </p>
+                    <Button 
+                      buttonText={data.button_text}
+                      buttonType={data.button_type}
+                      buttonLinkUrl={data.button_link.url}
+                      buttonLinkUid={data.button_link.uid}
+                      buttonAnchorLink={data.anchor_link}
+                      accessoPromo={data.accesso_promo_code}
+                      accessoKeyword={data.accesso_keyword}
+                      accessoPackageId={data.accesso_packageid}
+                    />
+                  </div>
+                </div>
+                <div className="col_half box_padding_left">
+                  <Images />
+                </div>
+              </div>
+            )}
+          </div>
+      </section>
+    )}
+    </>
   )
 }
