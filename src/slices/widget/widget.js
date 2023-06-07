@@ -62,24 +62,25 @@ const Widget = ({ icon, header, title, iconColor, headerType, widgetType }) => {
           console.log("NETWORK ERROR!")
         })
 
+        setHoursData("Open")
 
-        fetch(tradingHoursLink, {
-          method: "GET",
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            accept: "text/plain",
-            Authorization: `Bearer ${token}`,
-            "Access-Control-Allow-Origin": "*",
-          },
-        })
-        .then(res => res.json())
-        .then(resData => {
-          let hoursToday = resData.tradingHoursString
-          setHoursData(hoursToday)
-        })
-        .catch(err => {
-          console.log("NETWORK ERROR!")
-        })
+        // fetch(tradingHoursLink, {
+        //   method: "GET",
+        //   headers: {
+        //     "Content-type": "application/json; charset=UTF-8",
+        //     accept: "text/plain",
+        //     Authorization: `Bearer ${token}`,
+        //     "Access-Control-Allow-Origin": "*",
+        //   },
+        // })
+        // .then(res => res.json())
+        // .then(resData => {
+        //   let hoursToday = resData.tradingHoursString
+        //   setHoursData(hoursToday)
+        // })
+        // .catch(err => {
+        //   console.log("NETWORK ERROR!")
+        // })
       })
     }
     load()
