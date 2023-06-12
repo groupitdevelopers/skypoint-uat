@@ -47,7 +47,7 @@ const Widget = ({ icon, header, title, iconColor, headerType, widgetType }) => {
         .then(responseData => {
           let d = new Date()
           let month = (d.getMonth()+1)<10 ? "0"+(d.getMonth()+1) : d.getMonth()+1
-          let day =  d.getDate()<10 ? "0"+d.getDate() : d.getgetDate()
+          let day =  d.getDate()<10 ? "0"+d.getDate() : d.getDate()
           let today = d.getFullYear()+"-"+month+"-"+day
           responseData.daily.forEach(day => {
             if(day.dt.slice(0, -10) === today) {
