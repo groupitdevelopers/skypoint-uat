@@ -266,6 +266,34 @@ export const query = graphql`
               header_text_color
             }
           }
+          ... on PrismicSubpageDataBodyDoubleCardCustom {
+            id
+            slice_type
+            items {
+              image {
+                url
+              }
+            }
+            primary {
+              accesso_keyword
+              accesso_packageid
+              accesso_promo_code
+              anchor_id
+              anchor_link
+              button_link {
+                url
+              }
+              button_text
+              button_type
+              image_position
+              text_box_background
+              text_color
+              text_field {
+                richText
+              }
+              visible
+            }
+          }
         }
         meta_description
         meta_keywords
