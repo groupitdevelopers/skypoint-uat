@@ -73,7 +73,7 @@ export const DoubleCardCustom = props => {
               </div>
             </div>
             <div
-              className={`doubleCardRight col bg-${props.slice.primary.text_box_background}`}
+              className={`doubleCardRight col bg-${props.slice.primary.text_box_background} txt-${props.slice.primary.text_color}`}
             >
               <PrismicRichText field={richText} />
               <Button 
@@ -97,7 +97,7 @@ export const DoubleCardCustom = props => {
                 </div>
                 <div className="col_half box_padding_left">
                   <div
-                    className={`doubleCardRight col bg-${props.slice.primary.text_box_background}`}
+                    className={`doubleCardRight col bg-${props.slice.primary.text_box_background} txt-${props.slice.primary.text_color}`}
                   >
                     <PrismicRichText field={richText} />
                     <Button 
@@ -117,7 +117,7 @@ export const DoubleCardCustom = props => {
               <div className="row">
                 <div className="col_half box_padding_right">
                   <div
-                    className={`doubleCardLeft col bg-${props.slice.primary.text_box_background}`}
+                    className={`doubleCardLeft col bg-${props.slice.primary.text_box_background} txt-${props.slice.primary.text_color}`}
                   >
                     <PrismicRichText field={richText} />
                     <Button 
