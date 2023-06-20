@@ -41,4 +41,4 @@
     ENABLE_GATSBY_REFRESH_ENDPOINT = true
 
     // Refresh api connection [local]
-    // curl -X POST http://localhost:8000/__refresh 
+    // curl -X POST http://localhost:8000/__refresh
