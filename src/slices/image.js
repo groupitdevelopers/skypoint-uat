@@ -6,8 +6,8 @@ export const Image = props => {
   const text = props.slice.primary.text
 
   return (
-    <section 
-      className="container imageWrapper"
+    <section
+      className={`${autoHeigh ? "container imageWrapperFullWidth" : "container imageWrapper"}`}
       id = {anchorId}
       >
       <div className="row">
@@ -15,7 +15,6 @@ export const Image = props => {
           <img
             src={props.slice.primary.image.url}
             alt={props.slice.primary.image.alt ? props.slice.primary.image.alt : props.slice.primary.image.url}
-            className={`${autoHeigh ? "autoHeight" : "fixHeight"}`}
           />
         </div>
       </div>
