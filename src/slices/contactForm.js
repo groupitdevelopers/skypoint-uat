@@ -435,6 +435,7 @@ export const Contactform = props => {
                   <div className="col">
                     <textarea
                       className="inputTextarea"
+                      {...register("Message")}
                       placeholder="Please provide details on the type of event you're looking to host (Dinner/Lunch/Cocktail/Conference/Other)"
                     />
                   </div>
