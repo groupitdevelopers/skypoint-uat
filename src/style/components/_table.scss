@@ -3,7 +3,7 @@
     flex-flow: wrap;
 
     .tableBox{
-        width: 25%;
+        
         text-align: center;
         font-size: 1.6rem;
         box-sizing: border-box;
@@ -18,16 +18,25 @@
             font-weight: bolder;
         }
     }
+    .tableBoxEmpty{
+        width: 25%;
+    }
 
     @media screen and ($media-xs) {
         .tableBox{
             width: 100%;
+        }
+        .tableBoxEmpty{
+            display: none;
         }
     }
 
     @media screen and ($media-sm) {
         .tableBox{
             width: 50%;
+        }
+        .tableBoxEmpty{
+            display: none;
         }
     }
 }

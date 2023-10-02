@@ -22,7 +22,7 @@ const text_color = props.slice.primary.header_text_color
                     </div>
                 }
                 {!box.header_text &&
-                    <div className="tableBox" key={'table_'+index}></div>
+                    <div className="tableBoxEmpty" key={'table_'+index}></div>
                 }
             </>
         ))}
