@@ -61,6 +61,10 @@ body {
     .smV {display: none}
     .mdV {display: none}
     .lgV {display: none}
+    .xsB {display: flex!important}
+    .smB {display: none}
+    .mdB {display: none}
+    .lgB {display: none}
     main {
       padding-bottom: 9rem;
     }
@@ -79,6 +83,10 @@ body {
     .smV {display: block!important}
     .mdV {display: none}
     .lgV {display: none}
+    .xsB {display: none}
+    .smB {display: flex!important}
+    .mdB {display: none}
+    .lgB {display: none}
     main {
       padding-bottom: 9rem;
     }
@@ -92,6 +100,10 @@ body {
     .smV {display: none}
     .mdV {display: block!important}
     .lgV {display: none}
+    .xsB {display: none}
+    .smB {display: none}
+    .mdB {display: flex!important}
+    .lgB {display: none}
   }
 
   @media screen and ($media-lg) {
@@ -102,9 +114,12 @@ body {
     .smV {display: none}
     .mdV {display: none}
     .lgV {display: block!important}
+    .xsB {display: none}
+    .smB {display: none}
+    .mdB {display: none}
+    .lgB {display: flex!important}
   }
 }
-
 
 @import "./src/style/components/welcomeMessage";
 @import "./src/style/components/menu";
