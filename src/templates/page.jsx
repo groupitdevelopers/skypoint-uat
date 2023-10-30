@@ -46,7 +46,7 @@ export const query = graphql`
               background {
                 url
               }
-              mobile_background {
+              background {
                 url
               }
               header_text

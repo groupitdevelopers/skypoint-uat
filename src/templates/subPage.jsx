@@ -38,9 +38,6 @@ export const query = graphql`
               background {
                 url
               }
-              mobile_background {
-                url
-              }
               header_text
               video {
                 url
