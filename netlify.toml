@@ -3,8 +3,3 @@ from = "/homepage"
 to = "/"
 status = 200
 force = true
-
-[[redirects]]
-from = "/homepage"
-to = "/"
-status = 404
