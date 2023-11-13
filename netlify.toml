@@ -1,3 +1,6 @@
+# Using short url for anchor positioning because # not supporting in netlify 
+# Link: https://tinyurl.com/app
+
 [[redirects]]
 from = "/homepage"
 to = "/"
@@ -36,7 +39,7 @@ force = true
 
 [[redirects]]
 from = "/plan-your-visit/getting-here-parking"
-to = "https://shorturl.at/pyAHL"
+to = "https://tinyurl.com/m5e4ehu7"
 status = 200
 force = true
 
