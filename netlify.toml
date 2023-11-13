@@ -36,7 +36,7 @@ force = true
 
 [[redirects]]
 from = "/plan-your-visit/getting-here-parking"
-to = "/visit/#getting_here"
+to = "https://shorturl.at/pyAHL"
 status = 200
 force = true
 
