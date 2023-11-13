@@ -45,13 +45,13 @@ force = true
 
 [[redirects]]
 from = "/plan-your-visit/opening-hours"
-to = "/visit/#opening_hours"
+to = "https://tinyurl.com/bd663rc7"
 status = 200
 force = true
 
 [[redirects]]
 from = "/plan-your-visit/frequently-asked-questions"
-to = "/visit/#faq"
+to = "https://tinyurl.com/2pm735x9"
 status = 200
 force = true
 
@@ -69,13 +69,13 @@ force = true
 
 [[redirects]]
 from = "/plan-your-visit/group-visits"
-to = "/tickets/#groups"
+to = "https://tinyurl.com/bdev7zuz"
 status = 200
 force = true
 
 [[redirects]]
 from = "/plan-your-visit/gift-certificates"
-to = "/tickets/#gifts"
+to = "https://tinyurl.com/mr3579zc"
 status = 200
 force = true
 
@@ -87,19 +87,19 @@ force = true
 
 [[redirects]]
 from = "/skypoint-climb/experience-information"
-to = "/climb/#experience-info"
+to = "https://tinyurl.com/y9ajumda"
 status = 200
 force = true
 
 [[redirects]]
 from = "/skypoint-climb/climb-preparation"
-to = "/climb/#climb-preparation"
+to = "https://tinyurl.com/mr2wsbpf"
 status = 200
 force = true
 
 [[redirects]]
 from = "/skypoint-climb/frequently-asked-questions"
-to = "/climb/#faqs"
+to = "https://tinyurl.com/mvpaa3mm"
 status = 200
 force = true
 
