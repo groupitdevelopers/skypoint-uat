@@ -1,4 +1,5 @@
 .menuWrapper {
+  font-family: 'dalton';
   position: relative;
   margin: 0 auto;
   z-index: 9;
@@ -200,7 +201,7 @@
           text-decoration: none;
           &:hover {
             cursor: pointer;
-            color: $success-color;
+            color: $light-blue-color;
           }
         }
         &:hover {
@@ -231,7 +232,7 @@
               text-decoration: none;
               color: $white-color;
               &:hover {
-                color: $success-color;
+                color: $light-blue-color;
               }
             }
           }
