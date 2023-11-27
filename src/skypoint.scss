@@ -140,7 +140,8 @@ body {
   
   @media screen and ($media-md) {
     .hero-content {
-      font-size: 2.5rem
+      font-size: 2.5rem;
+      margin-bottom: 2rem
     }
     .xsV {display: none}
     .smV {display: none}
@@ -150,7 +151,8 @@ body {
 
   @media screen and ($media-lg) {
     .hero-content {
-      font-size: 2.5rem
+      font-size: 2.5rem;
+      margin-bottom: 2rem
     }
     .xsV {display: none}
     .smV {display: none}
