@@ -204,3 +204,9 @@ from = "/photos"
 to = "https://www.myvenuephotos.com/claim/index?PK=add17496-b1fc-4a3a-b247-3d3fa504e38d"
 status = 301
 force = true
+
+[[redirects]]
+from = "/skypoint-info/contact-us"
+to = "/contact-us"
+status = 200
+force = true
