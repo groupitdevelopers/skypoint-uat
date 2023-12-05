@@ -239,14 +239,6 @@ export const query = graphql`
               anchor_id
             }
           }
-          ... on PrismicSubpageDataBodySubscribeForm {
-            id
-            slice_type
-            primary {
-              button_text
-              button_type
-            }
-          }
           ... on PrismicSubpageDataBodyRichText {
             id
             slice_type
