@@ -97,7 +97,7 @@ export const Footer = props => {
               </div>
               <div className='col_quarter pl-0'>
                 <div className='footerHeaderText row'>
-                  <div className='col'>Ardent Leisure Brands</div>
+                  <div className='col'>Coast Entertainment Brands</div>
                 </div>
                 <div className='row mb-2'>
                   <button
