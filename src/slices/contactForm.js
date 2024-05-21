@@ -56,10 +56,19 @@ export const Contactform = props => {
     setLoadingSubmit(true)
     let emailAddress = "automation.robot@ardentleisure.com"
     let subject = ""
-    let content = `First Name: ${data.Name} - Email: ${data.Email} - Message: ${data.Message} - Phone: ${data.Phone}`
+    let msg = "No message"
+
+    if (data.Message !== "") {msg = data.Message}
+
+    // let content = `First Name: ${data.Name} - Email: ${data.Email} - Message: ${data.Message} - Phone: ${data.Phone}`
+
+    let content = `First Name: ${data.Name} - Email: ${data.Email} - Message: ${msg} - Phone: ${data.Phone}`
 
     if (formType === "Event") {
       subject = "SkyPoint Event Booking"
+
+      let company = "No Company"
+
       content = content + ` - Company: ${data.Company} - Number of Guest: ${data.PostCode} - Event Date: ${Day} ${Month} ${Year}`
     }
     else {
@@ -370,7 +379,7 @@ export const Contactform = props => {
                     <input
                       className="inputText"
                       type="text"
-                      {...register("Company")}         
+                      {...register("Company")}
                       placeholder="Company"
                     />
                   </div>
@@ -438,6 +447,7 @@ export const Contactform = props => {
                       {...register("Message")}
                       placeholder="Please provide details on the type of event you're looking to host (Dinner/Lunch/Cocktail/Conference/Other)"
                     />
+                      <div className="error">{errors.Message?.message}</div>
                   </div>
                 </div>
                 {errorSubmit && (

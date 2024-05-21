@@ -238,7 +238,7 @@ const SubscribeForm = () => {
                             <input
                               className="btn btn-primary btn-lg px-5"
                               type="submit"
-                              value={subscribeData.subscribe_button_text}                          />
+                              value={subscribeData.subscribe_button_text} />
                           )}
                           {loadingSubmit && (
                             <div className="btn btn-secondary btn-lg px-5">
