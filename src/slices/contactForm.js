@@ -43,7 +43,7 @@ export const Contactform = props => {
   const anchorId = props.slice.primary.anchor_id
   let days=["Day"]
   let months=["Month","January","February","March","April","May","June","July","August","September","October","November","December"]
-  let years=["Year", "2023", "2024"]
+  let years=["Year", "2024", "2025", "2026"]
   let formTypes=["SkyPoint General Enquiry", "SkyPoint Events Enquiry", "SkyPoint Climb Enquiry"]
 
   for (let i=0; i<31; i++) {days.push(i+1)}
@@ -349,7 +349,7 @@ export const Contactform = props => {
 
       {!formSuccess && (
       <>
-        <h3 className="txt-center my-1">Enquire Today</h3>
+        <h3 className="txt-center my-1">2024</h3>
         <div className="row">
           <div className="col"></div>
           <div className="col p-0 txt-center">
