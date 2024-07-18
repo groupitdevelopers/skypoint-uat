@@ -95,7 +95,7 @@ export const Contactform = props => {
     let tokenLink = "https://api.dreamworld.com.au/parksapi/gettoken"
     let token = ""
     // let link = `https://spforms.ardentleisure.com/parksapi/Email?emailAddress=${emailAddress}&subject=${subject}&content=${content}`
-    let link = `https://api.dreamworld.com.au/parksapi/Email?emailAddress=${emailAddress}&subject=${subject}&content=${content}`
+    let link = `https://api.dreamworld.com.au/parksapi/Email/Email?emailAddress=${emailAddress}&subject=${subject}&content=${content}`
 
     await fetch(tokenLink, {
       method: "POST",
