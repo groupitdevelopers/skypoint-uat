@@ -202,7 +202,7 @@ const Header = () => {
                 </a>
               </li>
               {MenuList().map((m, i) => (
-                <span key={i}>
+                <>
                   {(m.menu !== "More") && (
                     <li key={"Menu-"+i}>
                       <a href={"/" + headerLink(m.menu)}>{m.menu}</a>
@@ -218,7 +218,7 @@ const Header = () => {
                       )}
                     </li>
                   )} 
-                </span>
+                </>
               ))}
               <li key="buttonKey">
                 <a 
