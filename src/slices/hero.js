@@ -39,15 +39,22 @@ export const Hero = props => {
       {props.slice.primary.background_type && (
         <section 
           className={`${cls}`}
-        >
+        >          
           <video playsInline autoPlay muted loop className="videoBackground mdV lgV">
             <source src={props.slice.primary.video.url} type="video/mp4" />
           </video>
-
-          <video playsInline autoPlay muted loop className="videoBackground xsV smV">
+          <div className=" xsV smV">
+          {props.slice.primary.mobile_video.url && (
+          <video playsInline autoPlay muted loop className="videoBackground">
             <source src={props.slice.primary.mobile_video.url} type="video/mp4" />
           </video>
-
+          )}
+          {!props.slice.primary.mobile_video.url && (
+          <video playsInline autoPlay muted loop className="videoBackground">
+            <source src={props.slice.primary.video.url} type="video/mp4" />
+          </video>
+          )}
+          </div>
           <div className="container">
             <div className="row">
               <div className="txt-white p-3 hero-text">
