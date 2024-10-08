@@ -58,6 +58,7 @@
 
 @media only screen and ($media-xs) {
   .subHero {
+    height:15rem;
     text-align: center;
     .hero-text {
       width: 90%;
@@ -73,6 +74,7 @@
 
 @media only screen and ($media-sm) {
   .subHero {
+    height:18rem;
     text-align: center;
     .hero-text {
       width: 65%;
@@ -88,6 +90,7 @@
 
 @media only screen and ($media-md) {
   .subHero {
+    height: 20rem;
     text-align: center;
     .hero-text {
       margin-left: 15%;
