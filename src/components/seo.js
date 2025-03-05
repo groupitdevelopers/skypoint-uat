@@ -14,7 +14,7 @@ const Seo = ({seoData, children }) => {
                 })(window,document,'script','dataLayer','GTM-PJPN4FXJ');</script>
               `}
       </script>
-      <script type="text/javascript" src="https://al-skypoint.secure-cdn.oc.accessoticketing.com/embed/accesso.js" data-accesso="l=en-au"></script>
+      <script type="text/javascript" src="https://al-skypoint.store.skypoint.com.au/embed/accesso.js" data-accesso="l=en-au"></script>
       <meta name="description" content={seoData.meta_description} />
       <meta name="keywords" content={seoData.meta_keywords} />
       {seoData.og_title &&
